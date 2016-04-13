@@ -29,7 +29,7 @@ class Felho {
     fill (#FFFFFF);
     noStroke();
     ellipse (x+40, y+25, r, r);
-   fill (#FFFFFF);
+    fill (#FFFFFF);
     noStroke();
     ellipse (x+40, y-25, r, r);
   }
@@ -37,10 +37,11 @@ class Felho {
   void ussz() {
     x=x+0.3;
   }
-  
-  void hely (){
-    x =random(0,450);
-    y=random (0,450);;
+
+  void hely () {
+    x =random(0, 450);
+    y=random (0, 450);
+    ;
     r=60;
   }
 }
@@ -77,20 +78,17 @@ void setup() {
     csillagok[i]=new Csillag();
     csillagok[i].szuless();
     i=i+1;
-    
+
     int v =0;
-  while (v<4){
-  felho [v]= new Felho();
-  felho[v].hely();
-  v=v+1;
-  }
-    
-    
+    while (v<4) {
+      felho [v]= new Felho();
+      felho[v].hely();
+      v=v+1;
+    }
   }
   hold.x=50;
   hold.y=75;
   hold.r=40;
-  
 }
 
 void draw() {
@@ -98,19 +96,23 @@ void draw() {
 
   hold.vilagits();
   hold.mozogj();
-  
+
 
   int i= 0; 
   while (i<1000) {
     csillagok[i].ragyogj();
     i=i+1;
   }
-  
-  int v= 0; 
-  while (v<4) {
-    felho[v].legyel();
-    felho[v].ussz();
-    v=v+1;
-   
+
+  //int v= 0; 
+//  while (v<4) {
+  //  felho[v].legyel();
+   // felho[v].ussz();
+    //v=v+1;
+  //}
+
+  for (int j=0; j<4; j++){
+    felho[j].legyel();
+    felho[j].ussz();
   }
 }
