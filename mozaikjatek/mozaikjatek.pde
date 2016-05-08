@@ -28,6 +28,13 @@ void balra () {
     sor[lyuk]=loadImage("lyuk2.jpg");
   }
 }
+void jobbra () {
+if (lyuk<5) {
+lyuk ++;
+sor[lyuk-1]= sor[lyuk];
+sor[lyuk]= loadImage("lyuk2.jpg");
+}
+}
 
 void draw () {
 
@@ -35,6 +42,13 @@ void draw () {
     image (sor[kep], 150*kep, 0);
   }
 }
-void mouseClicked() {
+void keyPressed() {
+  if(key==CODED){
+  if (keyCode==RIGHT){
   balra();
+  }
+  }
+if (keyCode==LEFT){
+jobbra();
+}
 }
