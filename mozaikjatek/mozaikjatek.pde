@@ -8,38 +8,38 @@
 //}
 //}
 
-PImage[] sor = new PImage [6];
+PImage[][]racs = new PImage [1][6];
 int lyuk= 5;
 
 void setup () {
   size (900, 150);
 
-  sor[0] = loadImage("a1.jpg");
-  sor[1] = loadImage("a2.jpg");
-  sor[2] = loadImage("a3.jpg");
-  sor[3] = loadImage("a4.jpg");
-  sor[4] = loadImage("a5.jpg");
-  sor[5] = loadImage ("lyuk2.jpg");
+  racs[0][0] = loadImage("a1.jpg");
+  racs[0][1] = loadImage("a2.jpg");
+  racs[0][2] = loadImage("a3.jpg");
+  racs[0][3] = loadImage("a4.jpg");
+  racs[0][4] = loadImage("a5.jpg");
+  racs[0][5] = loadImage ("lyuk2.jpg");
 }
 void balra () {
   if (lyuk>0) {
     lyuk--;
-    sor[lyuk+1]=sor[lyuk];
-    sor[lyuk]=loadImage("lyuk2.jpg");
+    racs[0][lyuk+1]=racs[0][lyuk];
+    racs[0][lyuk]=loadImage("lyuk2.jpg");
   }
 }
 void jobbra () {
 if (lyuk<5) {
 lyuk ++;
-sor[lyuk-1]= sor[lyuk];
-sor[lyuk]= loadImage("lyuk2.jpg");
+racs[0][lyuk-1]= racs[0][lyuk];
+racs[0][lyuk]= loadImage("lyuk2.jpg");
 }
 }
 
 void draw () {
 
   for (int kep=0; kep <6; kep++) {
-    image (sor[kep], 150*kep, 0);
+    image (racs[0][kep], 150*kep, 0);
   }
 }
 void keyPressed() {
