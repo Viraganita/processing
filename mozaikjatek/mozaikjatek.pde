@@ -27,11 +27,11 @@ void setup () {
   racs[1][4]= loadImage ("b5.jpg");
   racs[1][5]= loadImage ("b6.jpg");
   racs[2][0]=loadImage ("c1.jpg");
-  racs[2][0]=loadImage ("c2.jpg");
-  racs[2][0]=loadImage ("c3.jpg");
-  racs[2][0]=loadImage ("c4.jpg");
-  racs[2][0]=loadImage ("c5.jpg");
-  racs[2][0]=loadImage ("c6.jpg");
+  racs[2][1]=loadImage ("c2.jpg");
+  racs[2][2]=loadImage ("c3.jpg");
+  racs[2][3]=loadImage ("c4.jpg");
+  racs[2][4]=loadImage ("c5.jpg");
+  racs[2][5]=loadImage ("c6.jpg");
   racs[3][0]=loadImage("d1.jpg");
   racs[3][1]=loadImage("d2.jpg");
   racs[3][2]=loadImage("d3.jpg");
@@ -63,9 +63,9 @@ void jobbra () {
 void draw () {
 
   
-  for(int sor=0;sor<6;sor++){
+  for(int sor=0;sor<5;sor++){
     
-  for(int oszlop=0;oszlop<5; oszlop++){
+  for(int oszlop=0;oszlop<6; oszlop++){
    image (racs[sor][oszlop],150*oszlop,150*sor);
   }
   }
