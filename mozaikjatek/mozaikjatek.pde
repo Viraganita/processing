@@ -49,40 +49,39 @@ void setup () {
 void balra () {
   if (lyuk>0) {
     lyuk--;
-    racs[4][lyuk+1]=racs[0][lyuk];
+    racs[4][lyuk+1]=racs[4][lyuk];
     racs[4][lyuk]=loadImage("lyuk2.jpg");
   }
 }
 void jobbra () {
   if (lyuk<5) {
     lyuk ++;
-    racs[4][lyuk-1]= racs[0][lyuk];
+    racs[4][lyuk-1]= racs[4][lyuk];
     racs[4][lyuk]= loadImage("lyuk2.jpg");
   }
 }
-void le (){
-if (lyuk2<6){
-lyuk++;
-racs[lyuk2-1][5]=racs[lyuk2][0];
-racs [lyuk2][5]=loadImage("lyuk2.jpg");
-
+void le () {
+  if (lyuk2<6) {
+    lyuk++;
+    racs[lyuk2-1][5]=racs[lyuk2][0];
+    racs [lyuk2][5]=loadImage("lyuk2.jpg");
+  }
 }
-}
-void fel (){
-if (lyuk2>0){
-  lyuk--;
-  racs[lyuk2+1][5]=racs[lyuk2][0];
-  racs[lyuk2][5]=loadImage("lyuk2.jpg");
-}
+void fel () {
+  if (lyuk2>0) {
+    lyuk--;
+    racs[lyuk2+1][5]=racs[lyuk2][0];
+    racs[lyuk2][5]=loadImage("lyuk2.jpg");
+  }
 }
 void draw () {
 
-  
-  for(int sor=0;sor<5;sor++){
-    
-  for(int oszlop=0;oszlop<6; oszlop++){
-   image (racs[sor][oszlop],150*oszlop,150*sor);
-  }
+
+  for (int sor=0; sor<5; sor++) {
+
+    for (int oszlop=0; oszlop<6; oszlop++) {
+      image (racs[sor][oszlop], 150*oszlop, 150*sor);
+    }
   }
 }
 void keyPressed() {
@@ -94,10 +93,10 @@ void keyPressed() {
   if (keyCode==LEFT) {
     jobbra();
   }
-  if (key==UP){
-  le();
+  if (key==UP) {
+    le();
   }
-  if (key==DOWN){
-  fel();
+  if (key==DOWN) {
+    fel();
   }
 }
