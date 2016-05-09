@@ -10,10 +10,10 @@
 
 PImage[][]racs = new PImage [5][6];
 int lyuk= 5;
-int lyuk2=6;
+int lyuk2=4;
 
 void setup () {
-  size (900, 900);
+  size (900, 750);
 
   racs[0][0] = loadImage("a1.jpg");
   racs[0][1] = loadImage("a2.jpg");
@@ -60,20 +60,21 @@ void jobbra () {
     racs[4][lyuk]= loadImage("lyuk2.jpg");
   }
 }
-void le () {
-  if (lyuk2<6) {
-    lyuk++;
-    racs[lyuk2-1][5]=racs[lyuk2][0];
-    racs [lyuk2][5]=loadImage("lyuk2.jpg");
-  }
-}
 void fel () {
   if (lyuk2>0) {
     lyuk--;
-    racs[lyuk2+1][5]=racs[lyuk2][0];
+    racs[lyuk2+1][5]=racs[lyuk2][5];
     racs[lyuk2][5]=loadImage("lyuk2.jpg");
   }
 }
+void le () {
+  if (lyuk2<6) {
+    lyuk++;
+    racs[lyuk2-1][5]=racs[lyuk2][5];
+    racs [lyuk2][5]=loadImage("lyuk2.jpg");
+  }
+}
+
 void draw () {
 
 
@@ -93,10 +94,10 @@ void keyPressed() {
   if (keyCode==LEFT) {
     jobbra();
   }
-  if (key==UP) {
+  if (keyCode==UP) {
     le();
   }
-  if (key==DOWN) {
+  if (keyCode==DOWN) {
     fel();
   }
 }
