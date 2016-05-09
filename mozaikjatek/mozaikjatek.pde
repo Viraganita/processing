@@ -64,10 +64,9 @@ void draw () {
 
   
   for(int sor=0;sor<6;sor++){
-    image (racs[0][sor],150*sor,0);
+    
   for(int oszlop=0;oszlop<5; oszlop++){
-    image (racs[oszlop][0],150*oszlop,0);
-    print(racs[sor][oszlop]);
+   image (racs[sor][oszlop],150*oszlop,150*sor);
   }
   }
 }
