@@ -10,6 +10,7 @@
 
 PImage[][]racs = new PImage [5][6];
 int lyuk= 5;
+int lyuk2=6;
 
 void setup () {
   size (900, 900);
@@ -60,18 +61,18 @@ void jobbra () {
   }
 }
 void le (){
-if (lyuk<6){
+if (lyuk2<6){
 lyuk++;
-racs[lyuk-1][5]=racs[lyuk][0];
-racs [lyuk][5]=loadImage("lyuk2.jpg");
+racs[lyuk2-1][5]=racs[lyuk2][0];
+racs [lyuk2][5]=loadImage("lyuk2.jpg");
 
 }
 }
 void fel (){
-if (lyuk>0){
+if (lyuk2>0){
   lyuk--;
-  racs[lyuk+1][5]=racs[lyuk][0];
-  racs[lyuk][5]=loadImage("lyuk2.jpg");
+  racs[lyuk2+1][5]=racs[lyuk2][0];
+  racs[lyuk2][5]=loadImage("lyuk2.jpg");
 }
 }
 void draw () {
