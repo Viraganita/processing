@@ -59,7 +59,21 @@ void jobbra () {
     racs[4][lyuk]= loadImage("lyuk2.jpg");
   }
 }
+void le (){
+if (lyuk<6){
+lyuk++;
+racs[lyuk-1][5]=racs[lyuk][0];
+racs [lyuk][5]=loadImage("lyuk2.jpg");
 
+}
+}
+void fel (){
+if (lyuk>0){
+  lyuk--;
+  racs[lyuk+1][5]=racs[lyuk][0];
+  racs[lyuk][5]=loadImage("lyuk2.jpg");
+}
+}
 void draw () {
 
   
@@ -78,5 +92,11 @@ void keyPressed() {
   }
   if (keyCode==LEFT) {
     jobbra();
+  }
+  if (key==UP){
+  le();
+  }
+  if (key==DOWN){
+  fel();
   }
 }
