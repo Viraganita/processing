@@ -62,11 +62,11 @@ void jobbra () {
 
 void draw () {
 
-  for (int kep=0; kep <6; kep++) {
-    image (racs[0][kep], 150*kep, 0);
-  }
+  
   for(int sor=0;sor<6;sor++){
+    image (racs[0][sor],150*sor,0);
   for(int oszlop=0;oszlop<5; oszlop++){
+    image (racs[oszlop][0],150*oszlop,0);
     print(racs[sor][oszlop]);
   }
   }
