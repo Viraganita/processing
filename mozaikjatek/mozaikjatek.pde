@@ -62,14 +62,14 @@ void jobbra () {
 }
 void fel () {
   if (lyuk2>0) {
-    lyuk--;
+    lyuk2--;
     racs[lyuk2+1][5]=racs[lyuk2][5];
     racs[lyuk2][5]=loadImage("lyuk2.jpg");
   }
 }
 void le () {
   if (lyuk2<6) {
-    lyuk++;
+    lyuk2++;
     racs[lyuk2-1][5]=racs[lyuk2][5];
     racs [lyuk2][5]=loadImage("lyuk2.jpg");
   }
@@ -90,7 +90,7 @@ void keyPressed() {
     if (keyCode==RIGHT) {
       balra();
     }
-  }
+  
   if (keyCode==LEFT) {
     jobbra();
   }
@@ -100,4 +100,4 @@ void keyPressed() {
   if (keyCode==DOWN) {
     fel();
   }
-}
+  }}
