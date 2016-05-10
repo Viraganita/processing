@@ -9,8 +9,10 @@
 //}
 
 PImage[][]racs = new PImage [5][6];
-int lyuk= 5;
-int lyuk2=4;
+
+int lyukS=4;
+int lyukO= 5;
+
 
 void setup () {
   size (900, 750);
@@ -47,31 +49,35 @@ void setup () {
   racs[4][5]=loadImage("lyuk2.jpg");
 }
 void balra () {
-  if (lyuk>0) {
-    lyuk--;
-    racs[4][lyuk+1]=racs[4][lyuk];
-    racs[4][lyuk]=loadImage("lyuk2.jpg");
+  if (lyukO>0) {
+   
+    racs[lyukS][lyukO]=racs[lyukS][lyukO-1];
+    racs[lyukS][lyukO-1]=loadImage("lyuk2.jpg");
+     lyukO--;
   }
 }
 void jobbra () {
-  if (lyuk<5) {
-    lyuk ++;
-    racs[4][lyuk-1]= racs[4][lyuk];
-    racs[4][lyuk]= loadImage("lyuk2.jpg");
+  if (lyukO<5) {
+    
+    racs[lyukS][lyukO]= racs[lyukS][lyukO+1];
+    racs[lyukS][lyukO+1]= loadImage("lyuk2.jpg");
+    lyukO ++;
   }
 }
 void fel () {
-  if (lyuk2>0) {
-    lyuk2--;
-    racs[lyuk2+1][5]=racs[lyuk2][5];
-    racs[lyuk2][5]=loadImage("lyuk2.jpg");
+  if (lyukS>0) {
+    
+    racs[lyukS][lyukO]=racs[lyukS-1][lyukO];
+    racs[lyukS-1][lyukO]=loadImage("lyuk2.jpg");
+    lyukS--;
   }
 }
 void le () {
-  if (lyuk2<6) {
-    lyuk2++;
-    racs[lyuk2-1][5]=racs[lyuk2][5];
-    racs [lyuk2][5]=loadImage("lyuk2.jpg");
+  if (lyukS<4) {
+  
+    racs[lyukS][lyukO]=racs[lyukS+1][lyukO];
+    racs [lyukS+1][lyukO]=loadImage("lyuk2.jpg");
+      lyukS++;
   }
 }
 
@@ -90,14 +96,15 @@ void keyPressed() {
     if (keyCode==RIGHT) {
       balra();
     }
-  
-  if (keyCode==LEFT) {
-    jobbra();
+
+    if (keyCode==LEFT) {
+      jobbra();
+    }
+    if (keyCode==UP) {
+      le();
+    }
+    if (keyCode==DOWN) {
+      fel();
+    }
   }
-  if (keyCode==UP) {
-    le();
-  }
-  if (keyCode==DOWN) {
-    fel();
-  }
-  }}
+}
